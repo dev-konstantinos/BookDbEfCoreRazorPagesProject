@@ -1,0 +1,28 @@
+﻿@page "{id:int}"
+@model BookDbEfCoreRazorPagesProject.Pages.Books.EditModel
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Book.Id" />
+    <div class="form-group">
+        <label asp-for="Book.Title">Title</label>
+        <input asp-for="Book.Title" class="form-control" />
+        <span asp-validation-for="Book.Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.Author">Author</label>
+        <input asp-for="Book.Author" class="form-control" />
+        <span asp-validation-for="Book.Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Book.Price">Price</label>
+        <input asp-for="Book.Price" class="form-control" />
+        <span asp-validation-for="Book.Price" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="Index">Back to List</a>
+</form>
